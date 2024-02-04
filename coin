@@ -1,0 +1,15 @@
+extends Area2D
+
+@onready var colect = $"colecting coin"
+
+@onready var anim1 = $"coin an"
+
+func _ready():
+	anim1.play("coin+")
+
+func _on_body_entered(body):
+	if body.name == "player" :
+		$"coin an".hide()
+		colect.play()
+		await colect.finished
+		queue_free()
