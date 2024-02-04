@@ -1,0 +1,17 @@
+extends Control
+
+func _ready():
+	hide() 
+	
+func _process(delta):
+	if Input.is_action_just_pressed("pause"):
+		show()
+		
+func _on_remuwe_button_down() :
+	hide()
+	
+func _on_quit_button_down():
+	get_tree().quit()
+
+func _on_restart_button_down():
+	get_tree().reload_current_scene()
